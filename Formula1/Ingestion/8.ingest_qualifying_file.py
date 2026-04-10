@@ -72,7 +72,7 @@ final_qualifying_df = qualifying_df.withColumnRenamed("qualifyId", "qualify_id")
 
 # COMMAND ----------
 
-# final_qualifying_df.write.mode("overwrite").format("parquet").saveAsTable("f1_processed.qualifying")
+# final_qualifying_df.write.mode("overwrite").format("parquet").saveAsTable("formula1_catalog.f1_processed.qualifying")
 
 # COMMAND ----------
 
@@ -86,7 +86,7 @@ final_qualifying_df = qualifying_df.withColumnRenamed("qualifyId", "qualify_id")
 # COMMAND ----------
 
 merge_condition = "tgt.qualify_id = src.qualify_id AND tgt.race_id = src.race_id"
-merge_delta_data(final_qualifying_df, 'f1_processed', 'qualifying', processed_folder_path, merge_condition, 'race_id')
+merge_delta_data(final_qualifying_df, 'formula1_catalog.f1_processed', 'qualifying', processed_folder_path, merge_condition, 'race_id')
 
 # COMMAND ----------
 

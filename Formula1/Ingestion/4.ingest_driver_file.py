@@ -112,12 +112,12 @@ drivers_final_df = drivers_with_columns_df.drop(col("url"))
 
 
 # # Remove the existing location
-# dbutils.fs.rm("abfss://processed@formula001adls.dfs.core.windows.net/driver", recurse=True)
+# Removed legacy cleanup to favor Unity Catalog managed paths
 
 # Write the DataFrame to the table again
-drivers_final_df.write.mode("overwrite").format("delta").saveAsTable("f1_processed.driver")
+drivers_final_df.write.mode("overwrite").format("delta").saveAsTable("formula1_catalog.f1_processed.driver")
 
-# drivers_final_df.write.mode("overwrite").format("parquet").saveAsTable("f1_processed.driver")
+# drivers_final_df.write.mode("overwrite").format("parquet").saveAsTable("formula1_catalog.f1_processed.driver")
 
 # COMMAND ----------
 

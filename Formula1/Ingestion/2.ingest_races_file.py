@@ -100,12 +100,12 @@ races_final_df = races_selected_df
 # spark.sql("DROP TABLE IF EXISTS f1_processed.races")
 
 # # Remove the existing location
-# dbutils.fs.rm("abfss://processed@formula001adls.dfs.core.windows.net/races", recurse=True)
+# Removed legacy cleanup to favor Unity Catalog managed paths
 
 # Write the DataFrame to the table again
-races_final_df.write.mode("overwrite").format("delta").saveAsTable("f1_processed.races")
+races_final_df.write.mode("overwrite").format("delta").saveAsTable("formula1_catalog.f1_processed.races")
 
-# races_final_df.write.mode("overwrite").format("parquet").saveAsTable("f1_processed.races")
+# races_final_df.write.mode("overwrite").format("parquet").saveAsTable("formula1_catalog.f1_processed.races")
 
 # COMMAND ----------
 

@@ -1,7 +1,8 @@
 -- Databricks notebook source
-CREATE DATABASE IF NOT EXISTS f1_processed
-LOCATION "abfss://processed@formula1datalakeboss.dfs.core.windows.net/"
+-- Unity Catalog: Create managed schema using 3-level namespace
+CREATE SCHEMA IF NOT EXISTS formula1_catalog.f1_processed
+MANAGED LOCATION 'abfss://processed@formula1datalakeboss.dfs.core.windows.net/';
 
 -- COMMAND ----------
 
-describe database f1_processed
+DESCRIBE SCHEMA formula1_catalog.f1_processed

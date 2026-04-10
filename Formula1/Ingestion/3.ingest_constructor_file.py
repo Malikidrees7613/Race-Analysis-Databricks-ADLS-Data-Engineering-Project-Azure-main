@@ -77,14 +77,14 @@ constructor_final_df = constructor_dropped_df.withColumnRenamed("constructorId",
 # spark.sql("DROP TABLE IF EXISTS f1_processed.constructor")
 
 # # Remove the existing location
-# dbutils.fs.rm("abfss://processed@formula001adls.dfs.core.windows.net/constructor", recurse=True)
+# Removed legacy cleanup to favor Unity Catalog managed paths
 
 
 # # Write the DataFrame to the table again
-constructor_final_df.write.mode("overwrite").format("delta").saveAsTable("f1_processed.constructor")
+constructor_final_df.write.mode("overwrite").format("delta").saveAsTable("formula1_catalog.f1_processed.constructor")
 
 
-# constructor_final_df.write.mode("overwrite").format("parquet").saveAsTable("f1_processed.constructor")
+# constructor_final_df.write.mode("overwrite").format("parquet").saveAsTable("formula1_catalog.f1_processed.constructor")
 
 # COMMAND ----------
 

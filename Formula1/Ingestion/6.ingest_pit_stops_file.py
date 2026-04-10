@@ -69,7 +69,7 @@ final_pit_stops_df = pit_stop_df.withColumnRenamed("raceId", "race_id")\
 
 # COMMAND ----------
 
-# final_pit_stops_df.write.mode("overwrite").format("parquet").saveAsTable("f1_processed.pit_stops")
+# final_pit_stops_df.write.mode("overwrite").format("parquet").saveAsTable("formula1_catalog.f1_processed.pit_stops")
 
 # COMMAND ----------
 
@@ -79,7 +79,7 @@ final_pit_stops_df = pit_stop_df.withColumnRenamed("raceId", "race_id")\
 # COMMAND ----------
 
 merge_condition = "tgt.race_id = src.race_id AND tgt.driver_id = src.driver_id AND tgt.stop = src.stop AND tgt.race_id = src.race_id"
-merge_delta_data(final_pit_stops_df, 'f1_processed', 'pit_stops', processed_folder_path, merge_condition, 'race_id')
+merge_delta_data(final_pit_stops_df, 'formula1_catalog.f1_processed', 'pit_stops', processed_folder_path, merge_condition, 'race_id')
 
 # COMMAND ----------
 

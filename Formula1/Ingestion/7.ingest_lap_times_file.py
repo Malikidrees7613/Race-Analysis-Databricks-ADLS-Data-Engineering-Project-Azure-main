@@ -62,7 +62,7 @@ final_lap_times_df = lap_times_df.withColumnRenamed("driverId", "driver_id") \
 
 # COMMAND ----------
 
-# final_lap_times_df.write.mode("overwrite").format("parquet").saveAsTable("f1_processed.lap_times")
+# final_lap_times_df.write.mode("overwrite").format("parquet").saveAsTable("formula1_catalog.f1_processed.lap_times")
 
 # COMMAND ----------
 
@@ -76,7 +76,7 @@ final_lap_times_df = lap_times_df.withColumnRenamed("driverId", "driver_id") \
 # COMMAND ----------
 
 merge_condition = "tgt.race_id = src.race_id AND tgt.driver_id = src.driver_id AND tgt.lap = src.lap AND tgt.race_id = src.race_id"
-merge_delta_data(final_lap_times_df, 'f1_processed', 'lap_times', processed_folder_path, merge_condition, 'race_id')
+merge_delta_data(final_lap_times_df, 'formula1_catalog.f1_processed', 'lap_times', processed_folder_path, merge_condition, 'race_id')
 
 # COMMAND ----------
 

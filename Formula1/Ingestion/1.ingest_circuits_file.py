@@ -120,12 +120,12 @@ circuits_final_df = add_ingestion_date(circuits_renamed_df)
 # spark.sql("DROP TABLE IF EXISTS f1_processed.circuits")
 
 # # Remove the existing location
-# dbutils.fs.rm("abfss://processed@formula001adls.dfs.core.windows.net/circuits", recurse=True)
+# Removed legacy cleanup to favor Unity Catalog managed paths
 
 # Write the DataFrame to the table again
-circuits_final_df.write.mode("overwrite").format("delta").saveAsTable("f1_processed.circuits")
+circuits_final_df.write.mode("overwrite").format("delta").saveAsTable("formula1_catalog.f1_processed.circuits")
 
-# circuits_final_df.write.mode("overwrite").format("parquet").saveAsTable("f1_processed.circuits")
+# circuits_final_df.write.mode("overwrite").format("parquet").saveAsTable("formula1_catalog.f1_processed.circuits")
 
 # COMMAND ----------
 

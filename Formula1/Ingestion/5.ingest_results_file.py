@@ -124,7 +124,7 @@ results_deduped_df = results_final_df.dropDuplicates(['race_id', 'driver_id'])
 # spark.sql("DROP TABLE IF EXISTS f1_processed.results")
 
 # Write the DataFrame with the desired partitioning
-# results_final_df.write.mode("append").partitionBy('race_id').format("parquet").saveAsTable("f1_processed.results")
+# results_final_df.write.mode("append").partitionBy('race_id').format("parquet").saveAsTable("formula1_catalog.f1_processed.results")
 
 # COMMAND ----------
 
@@ -139,7 +139,7 @@ results_deduped_df = results_final_df.dropDuplicates(['race_id', 'driver_id'])
 # COMMAND ----------
 
 merge_condition = "tgt.result_id = src.result_id AND tgt.race_id = src.race_id"
-merge_delta_data(results_deduped_df, 'f1_processed', 'results', processed_folder_path, merge_condition, 'race_id')
+merge_delta_data(results_deduped_df, 'formula1_catalog.f1_processed', 'results', processed_folder_path, merge_condition, 'race_id')
 
 # COMMAND ----------
 
