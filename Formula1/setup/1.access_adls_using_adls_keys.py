@@ -1,3 +1,4 @@
+# DEPRECATED: Use Unity Catalog External Locations for Serverless compatibility.
 # Databricks notebook source
 # MAGIC %md
 # MAGIC # Access Aure Data Lake using access keys
@@ -10,10 +11,7 @@ formula1dl_account_key = dbutils.secrets.get(scope = 'formula1-scope', key = 'fo
 
 # COMMAND ----------
 
-spark.conf.set(
-"fs.azure.account.key.formula001adls.dfs.core.windows.net",
-formula1dl_account_key
-)
+
 
 # COMMAND ----------
 

@@ -1,3 +1,4 @@
+# DEPRECATED: Use Unity Catalog External Locations for Serverless compatibility.
 # Databricks notebook source
 # MAGIC %md
 # MAGIC # Access Aure Data Lake using Service Principal
@@ -13,11 +14,7 @@ client_secret = dbutils.secrets.get(scope = 'formula1-scope', key = 'formula1-de
 
 storage_account_name = "formula001adls"  # Replace with your actual storage account name
 
-spark.conf.set(f"fs.azure.account.auth.type.{storage_account_name}.dfs.core.windows.net", "OAuth")
-spark.conf.set(f"fs.azure.account.oauth.provider.type.{storage_account_name}.dfs.core.windows.net", "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider")
-spark.conf.set(f"fs.azure.account.oauth2.client.id.{storage_account_name}.dfs.core.windows.net", client_id)
-spark.conf.set(f"fs.azure.account.oauth2.client.secret.{storage_account_name}.dfs.core.windows.net", client_secret)
-spark.conf.set(f"fs.azure.account.oauth2.client.endpoint.{storage_account_name}.dfs.core.windows.net", f"https://login.microsoftonline.com/{tenant_id}/oauth2/token")
+
 
 # COMMAND ----------
 

@@ -1,3 +1,4 @@
+# DEPRECATED: Use Unity Catalog External Locations for Serverless compatibility.
 # Databricks notebook source
 # MAGIC %md
 # MAGIC # Access Aure Data Lake using access keys

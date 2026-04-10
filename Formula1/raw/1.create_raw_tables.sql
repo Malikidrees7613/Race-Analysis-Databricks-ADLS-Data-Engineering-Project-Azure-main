@@ -30,7 +30,7 @@ url STRING
 )
 
 USING csv
-OPTIONS(path "abfss://raw@formula001adls.dfs.core.windows.net/circuits.csv", header True)
+OPTIONS(path "abfss://raw@formula1datalakeboss.dfs.core.windows.net/circuits.csv", header True)
 
 -- COMMAND ----------
 
@@ -59,7 +59,7 @@ url STRING
 )
 
 USING csv
-OPTIONS (path "abfss://raw@formula001adls.dfs.core.windows.net/races.csv", header True)
+OPTIONS (path "abfss://raw@formula1datalakeboss.dfs.core.windows.net/races.csv", header True)
 
 -- COMMAND ----------
 
@@ -89,7 +89,7 @@ name STRING,
 nationality STRING,
 url STRING)
 USING json
-OPTIONS (path "abfss://raw@formula001adls.dfs.core.windows.net/constructors.json", header True)
+OPTIONS (path "abfss://raw@formula1datalakeboss.dfs.core.windows.net/constructors.json", header True)
 
 -- COMMAND ----------
 
@@ -117,7 +117,7 @@ nationality STRING,
 url STRING)
 
 USING json
-OPTIONS (path "abfss://raw@formula001adls.dfs.core.windows.net/drivers.json", header True)
+OPTIONS (path "abfss://raw@formula1datalakeboss.dfs.core.windows.net/drivers.json", header True)
 
 -- COMMAND ----------
 
@@ -154,7 +154,7 @@ fastestLapTime STRING,
 fastestLapSpeed FLOAT,
 statusId STRING)
 USING json
-OPTIONS(path "abfss://raw@formula001adls.dfs.core.windows.net/results.json", header True)
+OPTIONS(path "abfss://raw@formula1datalakeboss.dfs.core.windows.net/results.json", header True)
 
 -- COMMAND ----------
 
@@ -181,7 +181,7 @@ stop INT,
 time STRING)
 
 USING json 
-OPTIONS (path "abfss://raw@formula001adls.dfs.core.windows.net/pit_stops.json", multiline true)
+OPTIONS (path "abfss://raw@formula1datalakeboss.dfs.core.windows.net/pit_stops.json", multiline true)
 
 -- COMMAND ----------
 
@@ -212,7 +212,7 @@ time STRING,
 milliseconds INT
 )
 USING csv
-OPTIONS (path "abfss://raw@formula001adls.dfs.core.windows.net/lap_times")
+OPTIONS (path "abfss://raw@formula1datalakeboss.dfs.core.windows.net/lap_times")
 
 -- COMMAND ----------
 
@@ -241,7 +241,7 @@ q3 STRING,
 qualifyId INT,
 raceId INT)
 USING json 
-OPTIONS(path "abfss://raw@formula001adls.dfs.core.windows.net/qualifying", multiline true)
+OPTIONS(path "abfss://raw@formula1datalakeboss.dfs.core.windows.net/qualifying", multiline true)
 
 -- COMMAND ----------
 
